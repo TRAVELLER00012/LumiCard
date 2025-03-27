@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    padding: 10px 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading{
+    width: 15%;
+}
+.listContainer{
+    padding-left: 0;
+    display: flex;
+    list-style: none;
+}
+.listContainer li{
+    font-weight: 500;
+    margin-right: 90px;
+    opacity: 0.8;
+    font-size: 1.07rem;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+.listContainer li:hover{
+    opacity: 1;
+}
+
+.listContainer li:last-child{
+    margin-right: 80px;
+}
+.button{
+    padding: 15px 20px;
+    outline: 0;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.login{
+    background-color: white;
+}
+.register{
+    background-color: rgb(163,254,121);
+}

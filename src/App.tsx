@@ -1,6 +1,11 @@
+import "./App.css"
+import Navbar from "./components/Navbar/navbar"
+
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      <Navbar />
+    </>
   )
 }
 
