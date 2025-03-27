@@ -35,6 +35,7 @@
     border: 2px solid black;
     font-size: 1rem;
     text-transform: capitalize;
+    cursor: pointer;
 }
 .login{
     background-color: white;
