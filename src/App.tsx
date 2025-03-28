@@ -23,7 +23,7 @@ const App = () => {
         <div className="home-heading-box">
           <p className="home-line-small">Lumi Card</p>
           <h1 className="heading-h1 home-heading-big">Create. Customize. Share. Instantly!</h1>
-          <p className="home-description">Design stunning digital postcards with ease! Customize text, images, and animations to create the perfect message for any occasion. Share your creation instantly with friends and family—no hassle, just creativity!</p>
+          <p className="home-description">Design stunning digital celebration cards with ease! Customize text, images, and animations to create the perfect message for any occasion. Share your creation instantly with friends and family—no hassle, just creativity!</p>
           <button className="home-get-started"><a href="">Let's Get Started</a></button>
         </div>
         <div className="home-images">
@@ -45,7 +45,7 @@ const App = () => {
             <span className="bold">LumiCard</span> is a platform that allows users to create&nbsp;
             <span className="bold">personalized and exciting</span> digital greetings for various occasions like&nbsp;
             <span className="bold">birthdays, holidays,</span> or special moments. Users can design&nbsp;
-            <span className="bold">animated postcards</span> using beautiful templates, customize them with&nbsp;
+            <span className="bold">animated celebration cards</span> using beautiful templates, customize them with&nbsp;
             <span className="bold">text, images, and effects,</span> and share them instantly with friends and family.&nbsp;
             <span className="bold">LumiCard eliminates the need for static images</span> and allows users to&nbsp;
             <span className="bold">bring their greetings to life,</span> making them more&nbsp;
@@ -77,7 +77,7 @@ const App = () => {
           <div className="feature">
             <div>
               <h2>No App Required</h2>
-              <p>Static images are a thing of the past—LumiCard adds movement, animations, and effects to make your greetings stand out. Add smooth transitions, playful animations, or interactive elements that make your digital postcards more immersive and engaging. Instead of a simple image, send a vibrant, living message that captures emotions in a way traditional cards never could.</p>
+              <p>Static images are a thing of the past—LumiCard adds movement, animations, and effects to make your greetings stand out. Add smooth transitions, playful animations, or interactive elements that make your digital celebration cards more immersive and engaging. Instead of a simple image, send a vibrant, living message that captures emotions in a way traditional cards never could.</p>
             </div>
             <img src={Feature3}/>
           </div>
