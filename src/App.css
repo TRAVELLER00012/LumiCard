@@ -198,7 +198,7 @@ body{
 .features-box{
     display: grid;
     grid-template-rows: repeat(3,1fr);
-    row-gap: 70px;
+    row-gap: 100px;
 }
 .features-box .feature{
     color: black;
