@@ -11,7 +11,14 @@ body{
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
 }
-
+.heading-h1{
+    font-size: 5rem;
+    width: 20ch;
+    font-family: 'Roboto Flex';
+    font-weight: 600;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+}
 .bg-particles {
     position: fixed;
     top: 0;
@@ -38,12 +45,7 @@ body{
 }
 
 .home-heading-big{
-    font-size: 5rem;
     width: 20ch;
-    font-family: 'Roboto Flex';
-    font-weight: 600;
-    word-spacing: 10px;
-    letter-spacing: 1px;
     margin-top: 0;
 }
 
@@ -90,4 +92,76 @@ body{
 .home-images img:last-child{
     right: 25%;
     transform: translateY(25px);
+}
+
+#about{
+    margin-top: 300px;
+}
+.about-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-box h1{
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+.about-box p{
+    margin-top: 0;
+    font-size: 1.15rem;
+    line-height: 30px;
+    width: 70ch;
+}
+.about-box a{
+    display: flex;
+    width: 100%;
+    font-size: 1.25rem;
+}
+.about-box a span{
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.about-box a:any-link{
+    color: white;
+    text-decoration: none;
+}
+.about-box svg{
+    opacity: 1;
+    margin-left: 10px;
+    width: 33px;
+    transition: transform 0.3s;
+}
+.about-box a:hover span{
+    opacity: 1;
+}
+
+.about-box a:hover svg{
+    transform: translateX(10px);
+}
+.about-images img{
+    position: absolute;
+    width: 350px;
+    overflow: visible;
+    rotate: -15deg;
+    margin-top: 50px;
+    transition: transform 0.5s;
+}
+.about-images img:hover{
+    transform: translateY(-150px);
+}
+
+.about-images img:first-child{
+    width:320px;
+    left: 95px;
+}
+.about-images img:nth-child(2){
+    left: 225px;
+}
+.about-images img:last-child{
+    left: 395px;
+}
+
+.bold{
+    font-weight: 500;
+    color: lightblue;
 }
