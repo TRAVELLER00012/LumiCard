@@ -222,3 +222,25 @@ body{
     width: 55ch;
     padding-left: 40px;
 }
+
+
+footer{
+    padding: 10px 20px;
+    background-color: var(--bg-light-green);
+    display: flex;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: space-between;
+}
+footer p{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+footer span{
+    font-size: 1.5rem;
+}
