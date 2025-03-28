@@ -19,12 +19,12 @@ const App = () => {
       <Navbar />
       <ParticleBackground />
 
-      <div className="grid--1x2" id="home">
+      <div className="grid--1x2" >
         <div className="home-heading-box">
           <p className="home-line-small">Lumi Card</p>
           <h1 className="heading-h1 home-heading-big">Create. Customize. Share. Instantly!</h1>
           <p className="home-description">Design stunning digital postcards with ease! Customize text, images, and animations to create the perfect message for any occasion. Share your creation instantly with friends and family—no hassle, just creativity!</p>
-          <button className="home-get-started">Let's Get Started</button>
+          <button className="home-get-started"><a href="">Let's Get Started</a></button>
         </div>
         <div className="home-images">
           <img src={FrontImg3} />
@@ -51,7 +51,7 @@ const App = () => {
             <span className="bold">bring their greetings to life,</span> making them more&nbsp;
             <span className="bold">engaging and memorable.</span>
           </p>
-          <a href="" className="link-direction"><span>Contribute</span><svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 512 512" id="rightarrow"><path d="m322.7 128.4 100.3 105c6 5.8 9 13.7 9 22.4s-3 16.5-9 22.4L322.7 383.6c-11.9 12.5-31.3 12.5-43.2 0-11.9-12.5-11.9-32.7 0-45.2l48.2-50.4h-217c-17 0-30.7-14.3-30.7-32s13.7-32 30.6-32h217l-48.2-50.4c-11.9-12.5-11.9-32.7 0-45.2 12-12.5 31.3-12.5 43.3 0z" fill="#a3fe79" className="color000000 svgShape"></path></svg> </a>
+          <a href="https://github.com/TRAVELLER00012" target="_blank" className="link-direction"><span>Contribute</span><svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" viewBox="0 0 512 512" id="rightarrow"><path d="m322.7 128.4 100.3 105c6 5.8 9 13.7 9 22.4s-3 16.5-9 22.4L322.7 383.6c-11.9 12.5-31.3 12.5-43.2 0-11.9-12.5-11.9-32.7 0-45.2l48.2-50.4h-217c-17 0-30.7-14.3-30.7-32s13.7-32 30.6-32h217l-48.2-50.4c-11.9-12.5-11.9-32.7 0-45.2 12-12.5 31.3-12.5 43.3 0z" fill="#a3fe79" className="color000000 svgShape"></path></svg> </a>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ const App = () => {
       </div>
 
     <footer>
-      <p>Daksh Kumar</p>
+      <p><a href="https://github.com/TRAVELLER00012" target="_blank">Daksh Kumar</a></p>
       <p>Lumi Card</p>
     </footer>
     </>

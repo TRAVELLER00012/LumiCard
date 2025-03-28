@@ -7,6 +7,10 @@
     --bg-light-green:rgb(163,254,121);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--bg-green);
     color: white;
@@ -96,6 +100,10 @@ body{
     background-color: var(--bg-light-green);
     cursor: pointer;
     transition: box-shadow 0.3s;
+}
+.home-get-started a:any-link{
+    color: black;
+    text-decoration: none;
 }
 .home-get-started:hover{
     box-shadow: 0 0 15px var(--bg-light-green);
@@ -239,6 +247,10 @@ footer p{
     font-weight: 500;
     margin-bottom: 0;
     margin-top: 0;
+}
+footer a:any-link{
+    color: black;
+    text-decoration: none;
 }
 
 footer span{

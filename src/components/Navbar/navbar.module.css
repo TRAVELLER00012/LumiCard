@@ -20,6 +20,10 @@
     transition: opacity 0.3s;
     cursor: pointer;
 }
+.listContainer li a:any-link{
+    color: white;
+    text-decoration: none;
+}
 .listContainer li:hover{
     opacity: 1;
 }
