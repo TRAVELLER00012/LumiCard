@@ -88,7 +88,7 @@ const App = () => {
 
     <footer>
       <p><a href="https://github.com/TRAVELLER00012" target="_blank">Daksh Kumar</a></p>
-      <p>Lumi Card</p>
+      <p><a href="#home">Lumi Card</a></p>
     </footer>
     </>
   )
