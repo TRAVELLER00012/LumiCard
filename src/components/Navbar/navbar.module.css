@@ -41,5 +41,5 @@
     background-color: white;
 }
 .register{
-    background-color: rgb(163,254,121);
+    background-color: var(--bg-light-green);
 }

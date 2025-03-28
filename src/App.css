@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
-    --bg-green: rgb(0,80,80)
+    --bg-green: rgb(0,80,80);
+    --bg-light-green:rgb(163,254,121);
 }
 
 body{
@@ -15,4 +19,75 @@ body{
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+.grid--1x2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 30px;
+}
+
+.home-heading-box{
+    justify-self: right;
+}
+
+.home-line-small{
+    text-transform: uppercase;
+    font-family: "Roboto";
+    letter-spacing: 3px;
+}
+
+.home-heading-big{
+    font-size: 5rem;
+    width: 20ch;
+    font-family: 'Roboto Flex';
+    font-weight: 600;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+.home-description{
+    font-size: 1.15rem;
+    width: 65ch;
+    line-height: 33px;
+    margin-bottom: 55px;
+}
+
+.home-get-started{
+    padding: 20px;
+    outline: 0;
+    border: 2px solid black;
+    font-size: 1.125rem;
+    border-radius: 10px;
+    font-weight: bolder;
+    word-spacing: 2px;
+    font-family: "Roboto";
+    background-color: var(--bg-light-green);
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+.home-get-started:hover{
+    box-shadow: 0 0 15px var(--bg-light-green);
+}
+
+.home-images{
+    display: flex;
+    justify-content: left;
+}
+
+.home-images img{
+    position: absolute;
+}
+.home-images img:first-child{
+    right: 12.5%;
+}
+.home-images img:nth-child(2){
+    right: 0%;
+    transform: translateY(33px);
+}
+
+.home-images img:last-child{
+    right: 25%;
+    transform: translateY(25px);
 }
