@@ -8,6 +8,7 @@ const Navbar = () => {
         <ul className={styles.listContainer}>
             <li>Home</li>
             <li>About</li>
+            <li>Features</li>
             <li>Templates</li>
             <li>Contribute</li>
         </ul>
