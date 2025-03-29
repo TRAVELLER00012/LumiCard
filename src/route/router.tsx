@@ -1,8 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from '../App'
+import Login from "../pages/Login/login";
 
 const router = createBrowserRouter([
-    {index:true, element:<App />}
+    {path:"/", children:[
+        {index:true,element: <App />},
+        {path:"/login",element:<Login />}
+    ]}
 ])
 
 export default router
