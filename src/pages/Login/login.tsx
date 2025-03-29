@@ -15,18 +15,18 @@ const Login = () => {
                 <h1>Login</h1>
                 <form>
                     <div className={styles.box}>
-                        <label htmlFor="">Email</label>
+                        <label htmlFor="email">Email</label>
                         <span>
                             <img src={Email} />
-                            <input type="email" />
+                            <input type="email" id="email" />
                         </span>
                     </div>
 
                     <div className={styles.box}>
-                        <label htmlFor="">Password</label>
+                        <label htmlFor="password">Password</label>
                         <span>
                             <img src={Padlock}/>
-                            <input type="password" />
+                            <input type="password" id="password" />
                         </span>
                     </div>
                     <div className={styles.buttons}>
