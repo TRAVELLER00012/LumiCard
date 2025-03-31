@@ -79,6 +79,7 @@ const BirthdayCard1 = () => {
                         <p>Sending Love Your Way</p>
                         <h1>Happy Birthday!</h1>
                         <h2>See you soon.</h2>
+                        <p className={styles.byLine}>By - Daksh Kumar </p>
                     </div>
                 </div>
             </div>

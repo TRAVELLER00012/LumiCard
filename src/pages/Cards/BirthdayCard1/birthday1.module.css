@@ -55,14 +55,19 @@
     margin-bottom: 33px;
     z-index: 100;
 }
-
-.parentTextContainer h1, .parentTextContainer h2{
+.parentTextContainer .byLine{
+    font-size: 2rem;
+}
+.parentTextContainer .byLine, .parentTextContainer h1, .parentTextContainer h2{
     font-family: "Italianno", cursive;
     text-transform: capitalize;
     font-weight: 500;
-    margin-bottom: 0;
-    margin-top: 0;
     rotate: -5deg;
+    margin-bottom: 0;
+}
+
+.parentTextContainer h1, .parentTextContainer h2{
+    margin-top: 0;
 }
 .parentTextContainer h1{
     font-size: 8rem;
