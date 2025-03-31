@@ -1,0 +1,104 @@
+.parentContainer{
+    background-color: #F7ECED;
+    background-image: url("../../../assets/texture/paper_texture.png");
+    background-size: contain;
+    color: black;
+    height: 93vh;
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 50% auto;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+}
+
+.image{
+    width: 450px;
+    height: 600px;
+    background-color: gold;
+    box-shadow: -25px 25px 100px black;
+    rotate: -5deg;
+    border-radius: 10px;
+}
+.parentTextContainer{
+    justify-self: left;
+
+}
+
+.parentTextContainer p{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 33px;
+    z-index: 100;
+}
+
+.parentTextContainer h1, .parentTextContainer h2{
+    font-family: "Italianno", cursive;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+    rotate: -5deg;
+}
+.parentTextContainer h1{
+    font-size: 8rem;
+}
+
+.parentTextContainer h2{
+    font-size: 5rem;
+    margin-top: 5px;
+    text-align: center;
+}
+
+@keyframes starTRAnimation {
+    0%{
+        transform: translateX(-100%) translateY(0);
+    }
+    50%{
+        transform: translateX(100%) translateY(10px);
+    }
+    100%{
+        transform: translateX(-100%) translateY(0);
+    }
+}
+
+@keyframes starBLAnimation {
+    0%{
+        transform: translateX(100%) translateY(0);
+    }
+    50%{
+        transform: translateX(-100%) translateY(10px);
+    }
+    100%{
+        transform: translateX(100%) translateY(0);
+    }
+}
+
+.star{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.starTR{
+    animation: starTRAnimation 5s ease-in-out infinite;
+}
+.starBL{
+    animation: starBLAnimation 5s ease-in-out infinite;
+}
+.blueStar{
+    background-image: url("../../../assets/texture/blue_texture.png");
+}
+.redStar{
+    background-image: url("../../../assets/texture/red_texture.png");
+}
