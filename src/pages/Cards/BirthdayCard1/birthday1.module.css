@@ -16,11 +16,26 @@
     height: 100%;
 }
 
+@keyframes imageMotion {
+    0%{
+        rotate: 0deg;
+    }
+    33%{
+        rotate: -5deg;
+    }
+    66%{
+        rotate: 5deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+
 .image{
     width: 450px;
     height: 600px;
     box-shadow: -25px 25px 100px black;
-    rotate: -5deg;
+    animation: imageMotion 5s ease-in-out infinite;
 }
 .image img{
     width: 100%;
