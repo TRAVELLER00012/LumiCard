@@ -19,14 +19,16 @@
 .image{
     width: 450px;
     height: 600px;
-    background-color: gold;
     box-shadow: -25px 25px 100px black;
     rotate: -5deg;
-    border-radius: 10px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .parentTextContainer{
     justify-self: left;
-
 }
 
 .parentTextContainer p{

@@ -1,41 +1,41 @@
 import Navbar from "../../components/Navbar/navbar"
 import ParticleBackground from "../../components/Particles/particles"
 import styles from "./templates.module.css"
-
+import {BC1_COVER} from "./images"
+import { useNavigate } from "react-router-dom"
 const Templates = () => {
-  return (
+
+
+    return (
     <>
         <Navbar items={[
-            {name:"theme1",hrefV:"#theme1"},
-            {name:"theme2",hrefV:"#theme2"}
+            {name:"Birthday",hrefV:"#birthdayCards"},
         ]} />
         <ParticleBackground />
 
         <div className={styles.container}>
 
-            <div className={styles.theme} id="theme1">
-                <h2 className="heading-h2">Theme 1</h2>
+            <div className={styles.theme} id="birthdayCards">
+                <h2 className="heading-h2">Birthday Cards</h2>
                 <div className={styles.themeList}>
-                    <div style={{background:"yellow",width:400,height:300}}></div>
-                    <div style={{background:"yellow",width:400,height:300}}></div>
-                    <div style={{background:"yellow",width:400,height:300}}></div>
+                    <Card coverImg={BC1_COVER}/>
                 </div>
             </div>
-
-            <div className={styles.theme} id="theme2">
-                <h2 className="heading-h2">Theme 2</h2>
-                <div className={styles.themeList}>
-                    <div style={{background:"yellow",width:400,height:300}}></div>
-                    <div style={{background:"yellow",width:400,height:300}}></div>
-                    <div style={{background:"yellow",width:400,height:300}}></div>
-                </div>
-            </div>
-
-
-
         </div>
     </>
   )
 }
+
+const Card = ({coverImg}:{coverImg:string}) =>{
+    const navigate = useNavigate()
+    return (
+        <>
+            <div className={styles.card} onClick={() => navigate("bc1")}>
+               <img src={coverImg}/>
+            </div>
+        </>
+    )
+}
+
 
 export default Templates

@@ -1,0 +1,1 @@
+export {default as BC1_COVER} from "../../assets/card_cover_images/bc1_cover.png"

@@ -1,9 +1,9 @@
-import ParticleBackground from "../../../components/Particles/particles"
-import styles from "./starter.module.css"
 import { useEffect, useState } from "react"
+import ParticleBackground from "../../../components/Particles/particles"
+import PersonImage from "../../../assets/card_images/default_bc1.jpg"
+import styles from "./birthday1.module.css"
 
-
-const Starter = () => {
+const BirthdayCard1 = () => {
     const blueStarsCount = 5
     const redStarCount = 5
     const [blueStars,setBlueStars] = useState<{tr:JSX.Element[],bl:JSX.Element[]}>({bl:[],tr:[]})
@@ -55,24 +55,26 @@ const Starter = () => {
             <ParticleBackground />
             <div className={styles.parentContainer}>
                 <div className={styles.rightTopDecorations}>
-                    {blueStars.tr.map(s => (
-                        <span>{s}</span>
+                    {blueStars.tr.map((s,i) => (
+                        <span key={i+0}>{s}</span>
                     ))}
-                    {redStars.tr.map(s => (
-                        <span>{s}</span>
+                    {redStars.tr.map((s,i) => (
+                        <span key={i+1}>{s}</span>
                     ))}
                 </div>
 
                 <div className={styles.bottomLeftDecorations}>
-                {blueStars.bl.map(s => (
-                        <span>{s}</span>
+                {blueStars.bl.map((s,i)=> (
+                        <span key={i+2}>{s}</span>
                     ))}
-                    {redStars.bl.map(s => (
-                        <span>{s}</span>
+                    {redStars.bl.map((s,i) => (
+                        <span key={i+3}>{s}</span>
                     ))}
                 </div>
                 <div className={styles.container}>
-                    <div className={styles.image}></div>
+                    <div className={styles.image}>
+                        <img src={PersonImage}/>
+                    </div>
                     <div className={styles.parentTextContainer}>
                         <p>Sending Love Your Way</p>
                         <h1>Happy Birthday!</h1>
@@ -84,4 +86,4 @@ const Starter = () => {
     )
 }
 
-export default Starter
+export default BirthdayCard1

@@ -16,3 +16,20 @@
     column-gap: 70px;
     row-gap: 70px;
 }
+.card{
+    cursor: pointer;
+    transition: scale 0.3s;
+    border-radius: 20px;
+}
+.card:hover{
+    scale: 1.1;
+}
+.card:hover img{
+    box-shadow: 0 0 20px black;
+}
+.card img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: box-shadow 0.3s;
+}
