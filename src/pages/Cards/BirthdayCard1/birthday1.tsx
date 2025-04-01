@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import ParticleBackground from "../../../components/Particles/particles"
 import PersonImage from "../../../assets/card_images/default_bc1.jpg"
 import styles from "./birthday1.module.css"
+import SideEditPanel from "../../../components/SideEditPanel/sideEditPanel"
 
 const BirthdayCard1 = () => {
     const blueStarsCount = 5
@@ -53,6 +54,7 @@ const BirthdayCard1 = () => {
     return (
         <>  
             <ParticleBackground />
+            <SideEditPanel />
             <div className={styles.parentContainer}>
                 <div className={styles.rightTopDecorations}>
                     {blueStars.tr.map((s,i) => (
