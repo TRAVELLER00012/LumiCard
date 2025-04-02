@@ -1,7 +1,6 @@
 .parentContainer{
     display: grid;
     grid-template-rows: 15% auto 15%;
-    justify-content: center;
     row-gap: 20px;
     background-color: white;
     border-radius: 20px;

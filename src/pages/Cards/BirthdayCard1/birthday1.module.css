@@ -36,6 +36,9 @@
     height: 600px;
     box-shadow: -25px 25px 100px black;
     animation: imageMotion 5s ease-in-out infinite;
+    border-style: solid;
+    /* border-width: 10px; */
+    /* border-color: "black"; */
 }
 .image img{
     width: 100%;
@@ -49,7 +52,6 @@
 .parentTextContainer p{
     text-transform: uppercase;
     text-align: center;
-    font-weight: 500;
     word-spacing: 10px;
     letter-spacing: 2px;
     margin-bottom: 33px;
@@ -61,7 +63,6 @@
 .parentTextContainer .byLine, .parentTextContainer h1, .parentTextContainer h2{
     font-family: "Italianno", cursive;
     text-transform: capitalize;
-    font-weight: 500;
     rotate: -5deg;
     margin-bottom: 0;
 }

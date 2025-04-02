@@ -1,8 +1,65 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
+import { RefObject } from "react"
 import styles from "./sideEditPanel.module.css"
 
-const SideEditPanel = () => {
+export type ImageControl = {
+    source : string,
+    borderColor : string,
+    borderWidth : number,
+    shadowColor : string
+}
+export type TextControl = {
+    text : string,
+    color : string,
+    bold : boolean,
+    underline : boolean
+}
+
+interface Props{
+    component: "TEXT" | "IMAGE" | "NONE",
+    componentState : ImageControl | TextControl,
+    setComponentState : (state : any) => void
+}
+
+const SideEditPanel = ({component,componentState,setComponentState} : Props) => {
     const [panelOpen,setPanelOpen] = useState(true)
+
+    const shadowColor_ = useRef<HTMLInputElement>(null)
+    const borderColor_ = useRef<HTMLInputElement>(null)
+    const borderWidth_ = useRef<HTMLInputElement>(null)
+
+    const text_ = useRef<HTMLTextAreaElement>(null)
+    const color_ = useRef<HTMLInputElement>(null)
+    const bold_ = useRef<HTMLInputElement>(null)
+    const underline_ = useRef<HTMLInputElement>(null)
+
+    const selectControl = () =>{
+        if(component == "IMAGE") return <ImageControl imgDefState={componentState} save={save} shadowColorElement={shadowColor_} borderColorElement={borderColor_} borderWidthElement={borderWidth_} />
+        else if (component == "TEXT") return <TextControl bold={bold_} color={color_} save={save} text={text_} textDefState={componentState} underline={underline_}/>
+        else return <div></div>
+    }
+
+    const save = () =>{
+        if(component == "IMAGE")
+            setComponentState({
+                ...componentState,
+                shadowColor : shadowColor_.current!.value,
+                borderColor: borderColor_.current!.value,
+                borderWidth: parseInt(borderWidth_.current!.value)
+            })
+        else if (component == "TEXT")
+            setComponentState({
+                ...componentState,
+                text: text_.current!.value,
+                color: color_.current!.value,
+                bold: bold_.current!.checked,
+                underline : underline_.current!.checked
+            })
+    }
+
+    const exportFun = () =>{
+        console.log(componentState);
+    }
 
     return (
         <>
@@ -17,13 +74,12 @@ const SideEditPanel = () => {
                 </div>
 
                 <div className={styles.options}>
-                    {/* <ImageControl /> */}
-                    <TextControl />
+                    {selectControl()}
                 </div>
 
                 <div className={styles.footer}>
-                    <button>Save Project</button>
-                    <button>Reset Project</button>
+                    <button onClick={save}>Save Project</button>
+                    <button onClick={exportFun}>Export Project</button>
                 </div>
             </div>
             <div onClick = {() => setPanelOpen(true)}className={panelOpen ? [styles.openButton,styles.hidden].join(" ") : styles.openButton}>
@@ -35,54 +91,50 @@ const SideEditPanel = () => {
     )
 }
 
-const ImageControl = () =>{
+const ImageControl = ({imgDefState,save,shadowColorElement,borderColorElement,borderWidthElement} : {imgDefState : any ,save:() => void, shadowColorElement : RefObject<HTMLInputElement>, borderColorElement : RefObject<HTMLInputElement>, borderWidthElement:RefObject<HTMLInputElement> } ) =>{
     return(
         <div className={[styles.controls,styles.imageControl].join(" ")}>
             <div>
-                <label htmlFor="image-select" className={styles.imageSelectLabel} style={{borderWidth:"auto"}}>Select Image</label>
+                <label htmlFor="image-select" className={styles.imageSelectLabel}>Select Image</label>
                 <input type="file" id="image-select" className={styles.imageSelectControl}/>
             </div>
             <div className={styles.imageShadowColor}>
                 <label htmlFor="imageShadowColor" >Shadow Colour </label>
-                <input type="color" id="imageShadowColor" />
+                <input type="color" id="imageShadowColor" ref={shadowColorElement} defaultValue={imgDefState?.shadowColor} onChange={save}/>
             </div>
             <div>
                 <label htmlFor="imageBorderColor" >Border Color</label>
-                <input type="color" id="imageBorderColor" />
+                <input type="color" id="imageBorderColor" ref={borderColorElement} defaultValue={imgDefState?.borderColor} onChange={save}/>
             </div>
             <div >
                 <label htmlFor="imageBorderWidth" >Border Width</label>
-                <input type="number" id="imageBorderWidth" defaultValue={0}/>
+                <input type="number" id="imageBorderWidth" ref={borderWidthElement} defaultValue={imgDefState?.borderWidth} onChange={save}/>
             </div>
         </div>
     )
 }
 
-const TextControl = () =>{
+const TextControl = ({bold,color,save,text,textDefState,underline} : {textDefState : any, save: () => void, text : RefObject<HTMLTextAreaElement>, color: RefObject<HTMLInputElement>, bold: RefObject<HTMLInputElement>,underline: RefObject<HTMLInputElement>}) =>{
     return (
         <div className={[styles.controls,styles.textControl].join(" ")}>
             <div>
                 <label htmlFor="text">Text</label>
                 <br />
-                <textarea />
+                <textarea ref={text} value={textDefState.text} onChange={save} />
             </div>
             <div>
                 <label htmlFor="textColor">Text Colour</label>
-                <input type="color" id="textColor" />
+                <input type="color" id="textColor" ref={color} value={textDefState.color} onChange={save} />
             </div>
 
             <div>
-                <label htmlFor="textColor">Text Colour</label>
-                <input type="color" id="textColor" />
-            </div>
-            <div>
                 <label htmlFor="textBold">Bold</label>
-                <input type="checkbox" id="textBold" defaultChecked />
+                <input type="checkbox" id="textBold" ref={bold} checked={textDefState.bold} onChange={save} />
             </div>
             
             <div>
                 <label htmlFor="textUnderline">Underline</label>
-                <input type="checkbox" id="textUnderline" />
+                <input type="checkbox" id="textUnderline" ref={underline} checked={textDefState.underline} onChange={save}/>
             </div>
 
         </div>
