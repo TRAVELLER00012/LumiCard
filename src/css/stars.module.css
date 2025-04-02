@@ -1,0 +1,45 @@
+@keyframes starTRAnimation {
+    0%{
+        transform: translateX(-100%) translateY(0);
+    }
+    50%{
+        transform: translateX(100%) translateY(10px);
+    }
+    100%{
+        transform: translateX(-100%) translateY(0);
+    }
+}
+
+@keyframes starBLAnimation {
+    0%{
+        transform: translateX(100%) translateY(0);
+    }
+    50%{
+        transform: translateX(-100%) translateY(10px);
+    }
+    100%{
+        transform: translateX(100%) translateY(0);
+    }
+}
+
+.star{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.starTR{
+    animation: starTRAnimation 5s ease-in-out infinite;
+}
+.starBL{
+    animation: starBLAnimation 5s ease-in-out infinite;
+}
+.blueStar{
+    background-image: url("../assets/texture/blue_texture.png");
+}
+.redStar{
+    background-image: url("../assets/texture/red_texture.png");
+}

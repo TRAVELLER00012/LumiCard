@@ -1,19 +1,7 @@
 import { useRef, useState } from "react"
 import { RefObject } from "react"
 import styles from "./sideEditPanel.module.css"
-
-export type ImageControl = {
-    source : string,
-    borderColor : string,
-    borderWidth : number,
-    shadowColor : string
-}
-export type TextControl = {
-    text : string,
-    color : string,
-    bold : boolean,
-    underline : boolean
-}
+import type {ImageControl,TextControl} from "../../hooks/useControl"
 
 interface Props{
     component: "TEXT" | "IMAGE" | "NONE",
