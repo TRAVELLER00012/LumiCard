@@ -10,7 +10,7 @@ interface Props{
 }
 
 const SideEditPanel = ({component,componentState,setComponentState} : Props) => {
-    const [panelOpen,setPanelOpen] = useState(true)
+    const [panelOpen,setPanelOpen] = useState(false)
 
     const shadowColor_ = useRef<HTMLInputElement>(null)
     const borderColor_ = useRef<HTMLInputElement>(null)
