@@ -37,9 +37,9 @@
 .starBL{
     animation: starBLAnimation 5s ease-in-out infinite;
 }
-.blueStar{
+.star1{
     background-image: url("../assets/texture/blue_texture.png");
 }
-.redStar{
+.star2{
     background-image: url("../assets/texture/red_texture.png");
 }
