@@ -1,13 +1,13 @@
-import ParticleBackground from "../../../components/Particles/particles"
-import SideEditPanel from "../../../components/SideEditPanel/sideEditPanel"
+import ParticleBackground from "../../../../components/Particles/particles"
+import SideEditPanel from "../../../../components/SideEditPanel/sideEditPanel"
 
-import useControl, { getText, setImageStyles, setTextStyles } from "../../../hooks/useControl"
-import type { ImageControl, TextControl } from "../../../hooks/useControl"
+import useControl, { getText, setImageStyles, setTextStyles } from "../../../../hooks/useControl"
+import type { ImageControl, TextControl } from "../../../../hooks/useControl"
 
-import PersonImage from "../../../assets/card_images/default_bc1.jpg"
+import PersonImage from "../../../../assets/card_images/default_bc1.jpg"
 
 import styles from "./birthday1.module.css"
-import Stars from "../../../components/Stars/stars"
+import Stars from "../../../../components/Stars/stars"
 
 const BirthdayCard1 = () => {
 
