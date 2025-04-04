@@ -53,6 +53,9 @@ const useControl = (defaultImageControls : ImageControl[] = [], defaultTextContr
 }
 
 export const setImageStyles = (imageControl : ImageControl[], id : number) => ({boxShadow: `-25px 25px 100px ${imageControl[id].shadowColor}`, borderWidth: `${imageControl[id].borderWidth}px`, borderColor: imageControl[id].borderColor})
-export const setTextStyles = (textControl : TextControl[], id:number) => ({color:textControl[id].color,fontWeight: textControl[id].bold ? "600" : "normal", textDecoration : textControl[id].underline ? "underline" : "none"})
+export const setTextStyles = (textControl : TextControl[], id:number,boldV : number | string  =  600,normalBoldV : number | string = "normal") => ({color:textControl[id].color,fontWeight: textControl[id].bold ? `${boldV}` : `${normalBoldV}`, textDecoration : textControl[id].underline ? "underline" : "none"})
 export const getText = (textControl : TextControl[], id:number) => textControl[id].text
+
+export const getComponentState = (control : ControlType, textControl : TextControl[], imageControl : ImageControl[]) => control.state == "TEXT" ? textControl[control.id] : imageControl[control.id]
+export const setterOfComponentState = (control : ControlType, updateState : (id:number,setter: (state: any) => void,newItem : any) => void , setTextControl : React.Dispatch<React.SetStateAction<TextControl[]>>, setImageControl : React.Dispatch<React.SetStateAction<ImageControl[]>>) => (state: TextControl | ImageControl) => control.state ==  "TEXT" ? updateState(control.id,setTextControl,state) : updateState(control.id,setImageControl,state)
 export default useControl;

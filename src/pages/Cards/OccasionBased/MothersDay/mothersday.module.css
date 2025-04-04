@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap');
+
+.parentContainer{
+    overflow: hidden;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FEF0F6;
+    color: #77213E;
+}
+
+.usableCard{
+    z-index: 1;
+    justify-self: right;
+    margin-right: 125px;
+    height: 550px;
+    rotate: -10deg;
+}
+.page{
+    width: 425px;
+    cursor: pointer;
+}
+.cardCoverPage{
+    background-color: #fecbcb;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.heart{
+    filter: drop-shadow(0 0 10px tomato);
+    transition: filter 0.3s;
+}
+.cardCoverPage:hover .heart{
+    filter: drop-shadow(0 0 20px tomato);
+}
+
+.cardCoverPage h1, .cardCoverPage h2 {
+    margin: 0;
+}
+
+.cardCoverPage h1{
+    font-family: "Lacquer",system-ui;
+    font-size: 6rem;
+}
+
+.cardCoverPage h2{
+    font-family: "Schoolbell", cursive;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    /* font-weight: 100; */
+    font-size: 4rem;
+}
+.content h2{
+    font-weight: 500    ;
+    letter-spacing: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.content h1{
+    font-family: "Sahitya";
+    font-family: serif;
+    font-size: 8rem;
+    font-weight: 400;
+    margin: 0;
+}
+.content p{
+    font-size: 1.7rem;
+    width: 40ch;
+    /* font-weight: 400; */
+    line-height: 45px;
+}
+.decorations{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+.decoration{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.topDecoration{
+    top: 50px;
+}
+.rightDecoration{
+    right: 30px;
+}
+.flower, .flowerLeft{
+    top: 165px;
+    scale: 1.3;
+}
+@keyframes leftFlowerFlow {
+    0%{
+        rotate: 27deg;
+    }
+    50%{
+        rotate: 44deg;
+    }
+    100%{
+        rotate: 27deg;
+    }
+}
+@keyframes rightFlowerFlow {
+    0%{
+        rotate: -27deg;
+    }
+    50%{
+        rotate: -44deg;
+    }
+    100%{
+        rotate: -27deg;
+    }
+}
+.flower{
+    right: 8px;
+    animation: rightFlowerFlow 4s ease-in-out infinite;
+}
+.flowerLeft{
+    left: 0;
+    animation: leftFlowerFlow 4s ease-in-out infinite;
+}
+.lastFlower{
+    top: 63%;
+}
+.headerDeco{
+    background-size: contain;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 87%;
+    height: 150px;
+    background-image: url("../../../../assets/images/plant-pots.png");
+}
+
+
+@keyframes wiggle {
+    0%{
+        rotate: 0deg;
+    }
+    33%{
+        rotate: -7deg;
+    }
+    66%{
+        rotate: 7deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+.wiggle{
+    animation: wiggle 5s ease-in-out infinite;
+}

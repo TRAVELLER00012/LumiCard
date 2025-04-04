@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar/navbar"
 import ParticleBackground from "../../components/Particles/particles"
 import styles from "./templates.module.css"
-import {BC1_COVER} from "./images"
+import {BC1_COVER,OB1_COVER} from "./images"
 import { useNavigate } from "react-router-dom"
 const Templates = () => {
 
@@ -10,6 +10,7 @@ const Templates = () => {
     <>
         <Navbar items={[
             {name:"Birthday",hrefV:"#birthdayCards"},
+            {name:"Occasion Based",hrefV:"#occasionBasedCards"},
         ]} />
         <ParticleBackground />
 
@@ -18,7 +19,13 @@ const Templates = () => {
             <div className={styles.theme} id="birthdayCards">
                 <h2 className="heading-h2">Birthday Cards</h2>
                 <div className={styles.themeList}>
-                    <Card coverImg={BC1_COVER}/>
+                    <Card coverImg={BC1_COVER} loc="bc1"/>
+                </div>
+            </div>
+            <div className={styles.theme} id="occasionBasedCards">
+                <h2 className="heading-h2">Occasion Based Cards</h2>
+                <div className={styles.themeList}>
+                    <Card coverImg={OB1_COVER} loc="ob1"/>
                 </div>
             </div>
         </div>
@@ -26,11 +33,11 @@ const Templates = () => {
   )
 }
 
-const Card = ({coverImg}:{coverImg:string}) =>{
+const Card = ({coverImg,loc}:{coverImg:string,loc:string}) =>{
     const navigate = useNavigate()
     return (
         <>
-            <div className={styles.card} onClick={() => navigate("bc1")}>
+            <div className={styles.card} onClick={() => navigate(loc)}>
                <img src={coverImg}/>
             </div>
         </>
