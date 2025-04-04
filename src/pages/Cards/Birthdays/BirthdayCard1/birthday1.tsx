@@ -1,8 +1,5 @@
-import ParticleBackground from "../../../../components/Particles/particles"
 import SideEditPanel from "../../../../components/SideEditPanel/sideEditPanel"
-
 import useControl, { getComponentState, getText, setImageStyles, setterOfComponentState, setTextStyles } from "../../../../hooks/useControl"
-import type { ImageControl, TextControl } from "../../../../hooks/useControl"
 
 import PersonImage from "../../../../assets/card_images/default_bc1.jpg"
 
@@ -33,12 +30,8 @@ const BirthdayCard1 = () => {
         underline:false
     }])
 
-    
-    
-    
     return (
         <>  
-            <ParticleBackground />
             <SideEditPanel component={control.state} componentState={getComponentState(control,textControl,imageControl)} setComponentState={setterOfComponentState(control,updateState,setTextControl,setImageControl)} />
             <div className={styles.parentContainer}>
                 <div className={styles.rightTopDecorations}><Stars position="TR"/></div>

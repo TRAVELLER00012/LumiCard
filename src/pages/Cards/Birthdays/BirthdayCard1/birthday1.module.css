@@ -3,9 +3,8 @@
     background-image: url("../../../assets/texture/paper_texture.png");
     background-size: contain;
     color: black;
-    height: 93vh;
+    height: 95vh;
     padding: 20px 30px;
-    border-radius: 20px;
 }
 
 .container{
