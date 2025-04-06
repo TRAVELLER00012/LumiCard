@@ -14,7 +14,7 @@ const Templates = () => {
         <Navbar items={[
             {name:"Birthday",hrefV:"#birthdayCards"},
             {name:"Occasion Based",hrefV:"#occasionBasedCards"},
-        ]} />
+        ]} projects={true}/>
         <ParticleBackground />
 
         <div className={styles.container}>
