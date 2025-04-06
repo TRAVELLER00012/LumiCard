@@ -1,4 +1,5 @@
 import {jwtDecode} from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 const LOCAL_KEY = "token";
 
@@ -21,4 +22,15 @@ export function setToken(token: string) {
 
 export function getToken() {
     return localStorage.getItem(LOCAL_KEY);
+}
+
+export function useVerfiy(){
+    const navigate = useNavigate()
+    const verify = () =>{
+        const userObj = useToken()
+        if (userObj != null && ("_id" in userObj) ) return userObj
+        navigate("/login")
+        return null
+    }
+    return verify
 }

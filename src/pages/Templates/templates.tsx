@@ -3,8 +3,11 @@ import ParticleBackground from "../../components/Particles/particles"
 import styles from "./templates.module.css"
 import {BC1_COVER,OB1_COVER} from "./images"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
+import { useVerfiy } from "../../services/token"
 const Templates = () => {
-
+    const verify = useVerfiy()
+    useEffect(() => {verify()})
 
     return (
     <>
