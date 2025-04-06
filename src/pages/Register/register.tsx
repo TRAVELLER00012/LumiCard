@@ -5,21 +5,48 @@ import Padlock from "../../assets/images/padlock.png"
 import User from "../../assets/images/user.png"
 
 import styles from "./register.module.css"
-
+import { FormEvent, useRef } from "react"
+import { UserRegister } from "../../services/auth-service"
+import Loading from "../../components/Loading/Loading"
+import useRegister from "../../hooks/useRegister"
 
 const Register = () => {
-  return (
+
+    const {register,error,setError,loading,setLoading} = useRegister()
+
+    const firstName = useRef<HTMLInputElement>(null)
+    const lastName = useRef<HTMLInputElement>(null)
+    const email = useRef<HTMLInputElement>(null)
+    const password = useRef<HTMLInputElement>(null) 
+    const confirmPassword = useRef<HTMLInputElement>(null)
+    
+    const submit = (event : FormEvent) =>{
+        event.preventDefault()
+        if(firstName.current && lastName.current && email.current && password.current && confirmPassword.current && password.current.value == confirmPassword.current.value){
+            console.log(password.current.value)
+            const user : UserRegister = {
+                name : `${firstName.current.value} ${lastName.current.value}`,
+                email: email.current.value,
+                password : password.current.value
+            }
+            register(user)
+        }else setError(true)
+    }
+
+    return (
     <>  
         <ParticleBackground />
         <div className={styles.containerParent}>
             <div className={styles.container}>
                 <h1>Register</h1>
-                <form>
+                {error && <p className="error">Some Error Occurred</p>}
+                {loading && <Loading />}
+                <form onSubmit={submit} onReset={() => {setError(false); setLoading(false)}}>
                     <div className={styles.box}>
                         <label htmlFor="firstName">First Name</label>
                         <span>
                             <img src={User} />
-                            <input type="text" id="firstName"/>
+                            <input type="text" id="firstName" ref={firstName}/>
                         </span>
                     </div>
 
@@ -27,15 +54,15 @@ const Register = () => {
                         <label htmlFor="lastName">Last Name</label>
                         <span>
                             <img src={User} />
-                            <input type="text" id="lastName"/>
+                            <input type="text" id="lastName" ref={lastName}/>
                         </span>
                     </div>
-  
+
                     <div className={styles.box}>
                         <label htmlFor="email">Email</label>
                         <span>
                             <img src={Email} />
-                            <input type="email" id="email" />
+                            <input type="email" id="email" ref={email}/>
                         </span>
                     </div>
 
@@ -43,7 +70,7 @@ const Register = () => {
                         <label htmlFor="password">Password</label>
                         <span>
                             <img src={Padlock}/>
-                            <input type="password" id="password"/>
+                            <input type="password" id="password" ref={password}/>
                         </span>
                     </div>
 
@@ -51,7 +78,7 @@ const Register = () => {
                         <label htmlFor="confirmPassword">Confirm Password</label>
                         <span>
                             <img src={Padlock}/>
-                            <input type="password" id="confirmPassword"/>
+                            <input type="password" id="confirmPassword" ref={confirmPassword}/>
                         </span>
                     </div>
                     <div className={styles.buttons}>
@@ -65,7 +92,7 @@ const Register = () => {
             </div>
         </div>
     </>
-  )
+    )
 }
 
 export default Register
