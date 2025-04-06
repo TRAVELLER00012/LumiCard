@@ -41,7 +41,7 @@ const Login = () => {
                         <label htmlFor="email">Email</label>
                         <span>
                             <img src={Email} />
-                            <input type="email" id="email" ref={email} required/>
+                            <input type="email" id="email" ref={email} required min={5} max={5}/>
                         </span>
                     </div>
 
@@ -49,7 +49,7 @@ const Login = () => {
                         <label htmlFor="password">Password</label>
                         <span>
                             <img src={Padlock}/>
-                            <input type="password" id="password" ref={password} required/>
+                            <input type="password" id="password" ref={password} required min={8}/>
                         </span>
                     </div>
                     <div className={styles.buttons}>
