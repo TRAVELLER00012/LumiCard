@@ -2,14 +2,14 @@ import styles from "./navbar.module.css"
 import PostCard from "../../assets/images/postcard.png"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { getToken, useVerfiy } from "../../services/token"
+import { getToken } from "../../services/token"
 
 interface Props{
   items? : {name:string,hrefV:string}[],
   projects?: boolean
 }
 
-const Navbar = ({items,projects} : Props) => {
+const Navbar = ({items} : Props) => {
   const [token,setToken] =  useState<boolean>(false)
   useEffect(() =>{
     const t = getToken()
