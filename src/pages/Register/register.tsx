@@ -46,7 +46,7 @@ const Register = () => {
                         <label htmlFor="firstName">First Name</label>
                         <span>
                             <img src={User} />
-                            <input type="text" id="firstName" ref={firstName}/>
+                            <input type="text" id="firstName" ref={firstName} required minLength={3} maxLength={50}/>
                         </span>
                     </div>
 
@@ -54,7 +54,7 @@ const Register = () => {
                         <label htmlFor="lastName">Last Name</label>
                         <span>
                             <img src={User} />
-                            <input type="text" id="lastName" ref={lastName}/>
+                            <input type="text" id="lastName" ref={lastName} required minLength={3} maxLength={49}/>
                         </span>
                     </div>
 
@@ -62,7 +62,7 @@ const Register = () => {
                         <label htmlFor="email">Email</label>
                         <span>
                             <img src={Email} />
-                            <input type="email" id="email" ref={email}/>
+                            <input type="email" id="email" ref={email} required minLength={5} maxLength={255}/>
                         </span>
                     </div>
 
@@ -70,7 +70,7 @@ const Register = () => {
                         <label htmlFor="password">Password</label>
                         <span>
                             <img src={Padlock}/>
-                            <input type="password" id="password" ref={password}/>
+                            <input type="password" id="password" ref={password} required minLength={8} maxLength={255}/>
                         </span>
                     </div>
 
@@ -78,7 +78,7 @@ const Register = () => {
                         <label htmlFor="confirmPassword">Confirm Password</label>
                         <span>
                             <img src={Padlock}/>
-                            <input type="password" id="confirmPassword" ref={confirmPassword}/>
+                            <input type="password" id="confirmPassword" ref={confirmPassword} required minLength={8} maxLength={255}/>
                         </span>
                     </div>
                     <div className={styles.buttons}>
