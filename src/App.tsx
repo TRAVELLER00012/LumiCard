@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom"
+
 import "./App.css"
 
 import Navbar from "./components/Navbar/navbar"
@@ -14,6 +16,8 @@ import Feature2 from "./assets/images/feature2.png"
 import Feature3 from "./assets/images/feature3.png"
 
 const App = () => {
+  const navigate = useNavigate()
+
   return (
     <>
       <Navbar />
@@ -24,7 +28,7 @@ const App = () => {
           <p className="home-line-small">Lumi Card</p>
           <h1 className="heading-h1 home-heading-big">Create. Customize. Share. Instantly!</h1>
           <p className="home-description">Design stunning digital celebration cards with ease! Customize text, images, and animations to create the perfect message for any occasion. Share your creation instantly with friends and family—no hassle, just creativity!</p>
-          <button className="home-get-started"><a href="">Let's Get Started</a></button>
+          <button className="home-get-started" onClick={() => navigate("/templates")}>Let's Get Started</button>
         </div>
         <div className="home-images">
           <img src={FrontImg3} />
