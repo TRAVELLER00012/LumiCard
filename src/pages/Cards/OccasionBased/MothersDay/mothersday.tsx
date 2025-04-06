@@ -1,16 +1,23 @@
-import { useEffect } from "react";
-import useControl, { getComponentState, getText, setterOfComponentState, setTextStyles } from "../../../../hooks/useControl";
+import { useEffect, useState } from "react";
+import useControl, { getComponentState, getText, setImageStyles, setterOfComponentState, setTextStyles } from "../../../../hooks/useControl";
 
 import SideEditPanel from "../../../../components/SideEditPanel/sideEditPanel";
 
 import Heart from  "../../../../assets/images/heart.png"
 import Flower from "../../../../assets/images/rose_no_stem.png"
+import Person from "../../../../assets/card_images/default_bc1.jpg"
 
 import styles from "./mothersday.module.css"
 
 const MothersDay = () => {
+    const [personSelected,setPersonSelected] = useState(false)
 
-    const {control,imageControl,setImageControl,textControl,setTextControl,selectImage,selectText,updateState} = useControl([],[
+    const {control,imageControl,setImageControl,textControl,setTextControl,selectImage,selectText,updateState} = useControl([{
+        borderColor:"#000000",
+        borderWidth: 0,
+        shadowColor:"#000000",
+        source: Person
+    }],[
         {bold:false,underline:false,color:"#77213E",text:"MoM"},
         {bold:false,underline:false,color:"#77213E",text:"I Love You!"},
         {bold:true,underline:false,color:"#77213E",text:"HAPPY"},
@@ -30,11 +37,14 @@ const MothersDay = () => {
         <SideEditPanel component={control.state} componentState={getComponentState(control,textControl,imageControl)} setComponentState={setterOfComponentState(control,updateState,setTextControl,setImageControl)}/>
         <div className={styles.parentContainer}>
             <div className={styles.container}>
-                <div className={[styles.usableCard,styles.wiggle].join(" ")}>
+                <div className={[styles.usableCard,styles.wiggle].join(" ")} onClick={() => setPersonSelected(!personSelected)}>
                     <div className={[styles.page,styles.cardCoverPage].join(" ")}>
                         <img src={Heart} className={styles.heart}/>
                         <h1 onClick={() => selectText(0)} style={setTextStyles(textControl,0)}>{getText(textControl,0)}</h1>
                         <h2 onClick={() => selectText(1)} style={setTextStyles(textControl,1)}>{getText(textControl,1)}</h2>
+                    </div>
+                    <div className={personSelected ? [styles.page,styles.firstPage].join(" ") : [styles.page,styles.firstPage,styles.hidden].join(" ")}>
+                        <img src={Person} className={styles.personImg} onClick={() => selectImage(0)} style={setImageStyles(imageControl,0)}/>
                     </div>
                 </div>
                 <div className={styles.content}>

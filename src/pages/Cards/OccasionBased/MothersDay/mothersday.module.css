@@ -23,10 +23,13 @@
     rotate: -10deg;
 }
 .page{
+    position: relative;
     width: 425px;
     cursor: pointer;
+    transition: opacity 0.3s;
 }
 .cardCoverPage{
+    position: absolute;
     background-color: #fecbcb;
     display: flex;
     height: 100%;
@@ -157,4 +160,12 @@
 }
 .wiggle{
     animation: wiggle 5s ease-in-out infinite;
+}
+
+.page .personImg{
+    width: 100%;
+    object-fit: cover;
+}
+.hidden{
+    opacity: 0;
 }
