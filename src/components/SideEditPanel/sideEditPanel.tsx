@@ -77,7 +77,7 @@ const SideEditPanel = ({component,componentState,setComponentState} : Props) => 
                 </div>
 
                 <div className={styles.footer}>
-                    <button onClick={save}>Save Project</button>
+                    {/* <button onClick={save}>Save Project</button> */}
                     <button onClick={exportFun}>Export Project</button>
                 </div>
             </div>
