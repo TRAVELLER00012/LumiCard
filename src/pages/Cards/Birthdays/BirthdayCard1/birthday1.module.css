@@ -1,6 +1,6 @@
 .parentContainer{
     background-color: #F7ECED;
-    background-image: url("../../../assets/texture/paper_texture.png");
+    background-image: url("../../../../assets/texture/paper_texture.png");
     background-size: contain;
     color: black;
     height: 95vh;

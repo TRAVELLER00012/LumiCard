@@ -1,5 +1,5 @@
 import SideEditPanel from "../../../../components/SideEditPanel/sideEditPanel"
-import useControl, { getComponentState, getText, setImageStyles, setterOfComponentState, setTextStyles } from "../../../../hooks/useControl"
+import useControl, { getComponentState, getImageSource, getText, setImageStyles, setterOfComponentState, setTextStyles } from "../../../../hooks/useControl"
 
 import PersonImage from "../../../../assets/card_images/default_bc1.jpg"
 
@@ -40,7 +40,7 @@ const BirthdayCard1 = () => {
                 
                 <div className={styles.container}>
                     <div className={styles.image} onClick={() => selectImage(0)} style={setImageStyles(imageControl,0)}>
-                        <img src={PersonImage} />
+                        <img src={getImageSource(imageControl,0)} />
                     </div>
                     
                     <div className={styles.parentTextContainer}>

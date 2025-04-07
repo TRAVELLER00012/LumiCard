@@ -53,6 +53,7 @@ const useControl = (defaultImageControls : ImageControl[] = [], defaultTextContr
 }
 
 export const setImageStyles = (imageControl : ImageControl[], id : number) => ({boxShadow: `-25px 25px 100px ${imageControl[id].shadowColor}`, borderWidth: `${imageControl[id].borderWidth}px`, borderColor: imageControl[id].borderColor})
+export const getImageSource = (imageControl : ImageControl[], id : number) => imageControl[id].source
 export const setTextStyles = (textControl : TextControl[], id:number,boldV : number | string  =  600,normalBoldV : number | string = "normal") => ({color:textControl[id].color,fontWeight: textControl[id].bold ? `${boldV}` : `${normalBoldV}`, textDecoration : textControl[id].underline ? "underline" : "none"})
 export const getText = (textControl : TextControl[], id:number) => textControl[id].text
 

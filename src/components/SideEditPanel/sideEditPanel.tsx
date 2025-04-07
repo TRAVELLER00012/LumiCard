@@ -12,6 +12,7 @@ interface Props{
 const SideEditPanel = ({component,componentState,setComponentState} : Props) => {
     const [panelOpen,setPanelOpen] = useState(false)
 
+    const source_ = useRef<HTMLInputElement>(null)
     const shadowColor_ = useRef<HTMLInputElement>(null)
     const borderColor_ = useRef<HTMLInputElement>(null)
     const borderWidth_ = useRef<HTMLInputElement>(null)
@@ -22,19 +23,29 @@ const SideEditPanel = ({component,componentState,setComponentState} : Props) => 
     const underline_ = useRef<HTMLInputElement>(null)
 
     const selectControl = () =>{
-        if(component == "IMAGE") return <ImageControl imgDefState={componentState} save={save} shadowColorElement={shadowColor_} borderColorElement={borderColor_} borderWidthElement={borderWidth_} />
+        if(component == "IMAGE") return <ImageControl imgDefState={componentState} save={save} shadowColorElement={shadowColor_} borderColorElement={borderColor_} borderWidthElement={borderWidth_} sourceElement={source_} />
         else if (component == "TEXT") return <TextControl bold={bold_} color={color_} save={save} text={text_} textDefState={componentState} underline={underline_}/>
         else return <div></div>
     }
 
     const save = () =>{
-        if(component == "IMAGE")
+        let file : any;
+        let imageUrl: any;
+        if(source_.current?.files?.length){
+            file = source_.current.files[0];
+            imageUrl = URL.createObjectURL(file);
+        }
+
+        if(component == "IMAGE"){
             setComponentState({
                 ...componentState,
+                source: imageUrl ? imageUrl : (componentState as ImageControl).source,
                 shadowColor : shadowColor_.current!.value,
                 borderColor: borderColor_.current!.value,
-                borderWidth: parseInt(borderWidth_.current!.value)
+                borderWidth: borderWidth_.current!.value ? parseInt(borderWidth_.current!.value) : 0
             })
+        }
+
         else if (component == "TEXT")
             setComponentState({
                 ...componentState,
@@ -79,12 +90,12 @@ const SideEditPanel = ({component,componentState,setComponentState} : Props) => 
     )
 }
 
-const ImageControl = ({imgDefState,save,shadowColorElement,borderColorElement,borderWidthElement} : {imgDefState : any ,save:() => void, shadowColorElement : RefObject<HTMLInputElement>, borderColorElement : RefObject<HTMLInputElement>, borderWidthElement:RefObject<HTMLInputElement> } ) =>{
+const ImageControl = ({imgDefState,save,shadowColorElement,borderColorElement,borderWidthElement,sourceElement} : {imgDefState : any ,save:() => void, shadowColorElement : RefObject<HTMLInputElement>, borderColorElement : RefObject<HTMLInputElement>, borderWidthElement:RefObject<HTMLInputElement> ,sourceElement:RefObject<HTMLInputElement>} ) =>{
     return(
         <div className={[styles.controls,styles.imageControl].join(" ")}>
             <div>
                 <label htmlFor="image-select" className={styles.imageSelectLabel}>Select Image</label>
-                <input type="file" id="image-select" className={styles.imageSelectControl}/>
+                <input type="file" id="image-select" accept="image/*" className={styles.imageSelectControl} ref={sourceElement} onChange={save}/>
             </div>
             <div className={styles.imageShadowColor}>
                 <label htmlFor="imageShadowColor" >Shadow Colour </label>
